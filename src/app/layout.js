@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       <div className="image-gradient absolute top-0 right-0 -z-10">
          
       </div>
-        <div className="layer-blur" />
+        <div className="layer-blur mt-4" />
         <Navbar/>
         {children}
       </body>

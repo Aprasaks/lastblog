@@ -17,11 +17,7 @@ export default function PostCategoryPage() {
   return (
     <>
     <div className="p-12">
-      <h2 className="text-4xl font-bold mb-8">
-        {category.toUpperCase()} 카테고리
-      </h2>
-      {/* 이 아래에 category 값에 따라 글 리스트 등 표시 */}
-      <p>여기서 {category} 카테고리의 게시물을 보여줄 수 있어요!</p>
+      
     </div>
   
     <SplineViewer

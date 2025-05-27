@@ -10,7 +10,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="flex items-center justify-between py-4 px-20 z-50 font-maplestory">
+    <header className="flex items-center justify-between  mt-2 py-4 px-20 z-50 font-maplestory">
       {/* 왼쪽: 로고 */}
       <h1
         className="text-5xl font-light text-gray-100"
