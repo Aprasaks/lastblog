@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'MaplestoryOTFBold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* reset & body 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: system-ui;
+  background-color: black;
+  color: #e7e7e7;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* blur 레이어 그림자 */
+.layer-blur {
+  height: 0;
+  width: 30rem;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  box-shadow: 0 0 700px 15px white;
+  rotate: -30deg;
+  z-index: -1;
+}
+
+/* AOS 기본 초기화 스냅샷(생략 가능) */
+/* spline-viewer, AOS CSS는 layout.js에서 import 할 거예요 */
