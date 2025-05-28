@@ -4,9 +4,9 @@ import Link from "next/link";
 export default function Navbar() {
   // 메뉴 라벨과 경로 매핑
   const NAVS = [
-    { label: "POST", href: "/posts/post" },
-    { label: "PROJECT", href: "/posts/project" },
-    { label: "ERROR", href: "/posts/error" },
+    { label: "POST", href: "/post" },
+    { label: "PROJECT", href: "/project" },
+    { label: "ERROR", href: "/error" },
   ];
 
   return (
