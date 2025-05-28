@@ -14,7 +14,7 @@ export default async function PostDetailPage({ params }) {
   const { content, data } = matter(source);
 
   return (
-    <main className="min-h-screen w-full bg-black text-white overflow-auto">
+    <main className="min-h-screen w-full text-white overflow-auto">
       <div className="p-8 max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold mb-6">{data.title}</h1>
         <MarkdownViewer source={content} />

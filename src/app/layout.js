@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className="relative overflow-hidden px-8 bg-black text-gray-200">
+      <body className="relative  px-8 bg-black text-gray-200">
       <div className="image-gradient absolute top-0 right-0 -z-10">
          
       </div>
