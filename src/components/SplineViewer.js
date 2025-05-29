@@ -11,7 +11,6 @@ export default function SplineViewer({ url, className = "" }) {
       data-aos-easing="ease-in-back"
       data-aos-delay="300"
       data-aos-offset="0"
-      data-aos-duration="1500"
     />
   );
 }
