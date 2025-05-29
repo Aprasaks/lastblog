@@ -61,8 +61,7 @@ export default function HomePage() {
         </div>
       </main>
 
-      <SplineViewer url="https://prod.spline.design/Dbo0lld00mTtmdNN/scene.splinecode" className="absolute top-0 right-[-20%]" />
+      <SplineViewer url="https://prod.spline.design/LhHn-IAeBtDJN3SY/scene.splinecode" className="absolute top-0 right-[-20%]" />
     </div>
   )
 }
-
