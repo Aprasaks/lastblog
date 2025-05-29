@@ -12,6 +12,7 @@ export default function Navbar() {
   return (
     <header className="flex items-center justify-between  mt-2 py-4 px-20 z-50 font-maplestory">
       {/* 왼쪽: 로고 */}
+      <Link href="https://demian.dev">
       <h1
         className="text-5xl font-light text-gray-100"
         data-aos="fade-down"
@@ -19,6 +20,7 @@ export default function Navbar() {
       >
         DEMIAN
       </h1>
+      </Link>
 
       {/* 가운데: 메뉴 + 깃허브 */}
       <nav className="flex gap-12 items-center mx-auto">
