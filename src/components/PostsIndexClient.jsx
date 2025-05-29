@@ -121,10 +121,10 @@ export default function PostsIndexClient({ categories: initialCategories }) {
         </div>
       </div>
     </main>
-     <SplineViewer
+     {/* <SplineViewer
      url="https://prod.spline.design/eu2uMpSZBa8xnMYO/scene.splinecode"
      className="pointer-events-none fixed right-8 bottom-8 w-80 h-80 origin-bottom-right"
-   />
+   /> */}
    </>
   );
 }
