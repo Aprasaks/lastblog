@@ -16,7 +16,7 @@ export default function HomePage() {
   const days = Math.floor(diff / (1000 * 60 * 60 * 24)) + 1;
 
   return (
-    <div className =" pointer-events-none"> 
+    <div className =" pointer-events-none "> 
     
 
       <main className="flex flex-col justify-center min-h-[90vh]">
