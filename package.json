@@ -11,8 +11,10 @@
   "dependencies": {
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/viewer": "^1.9.96",
+    "@tailwindcss/typography": "^0.5.16",
     "aos": "^2.3.4",
     "gray-matter": "^4.0.3",
+    "highlight.js": "^11.11.1",
     "lucide-react": "^0.511.0",
     "next": "15.3.2",
     "react": "^19.0.0",

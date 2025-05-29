@@ -22,7 +22,7 @@ export default function BookTreeSidebar({ categories = [], searchTerm = "" }) {
   const actuallyOpen = highlightInfo.open ?? openCategory;
 
   return (
-    <aside className="w-80 min-w-[240px] max-w-xs h-full bg-transparent ml-4 px-5 py-8  select-none">
+    <aside className="w-80 min-w-[240px] max-w-xs h-full bg-transparent ml-1 py-8  select-none">
       
       <div className="space-y-2">
         {categories.map(cat => (
