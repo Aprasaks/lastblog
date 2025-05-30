@@ -16,7 +16,6 @@ export default async function PostDetailPage({ params }) {
   return (
     <main className="min-h-screen w-full text-white ">
       <div className="p-8 max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6">{data.title}</h1>
         <MarkdownViewer source={content} />
       </div>
     </main>

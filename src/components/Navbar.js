@@ -14,7 +14,7 @@ export default function Navbar() {
       {/* 왼쪽: 로고 */}
       <Link href="https://demian.dev">
       <h1
-        className="text-5xl font-light text-gray-100"
+        className="text-3xl font-light text-gray-100"
         data-aos="fade-down"
         data-aos-duration="1500"
       >
