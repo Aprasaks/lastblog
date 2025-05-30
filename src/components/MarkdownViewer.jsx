@@ -9,7 +9,7 @@ import 'highlight.js/styles/github-dark.css';
 
 export default function MarkdownViewer({ source }) {
   return (
-    <article className="prose prose-invert max-w-none leading-relaxed text-lg">
+    <article className="prose prose-invert max-w-none leading-relaxed text-lg ">
       <ReactMarkdown
         children={source}
         remarkPlugins={[remarkGfm]}
