@@ -42,23 +42,27 @@ tag: project
 
 ## 4. 폴더/파일/컴포넌트 구조 (예상)
 
-/src
-/components
-Navbar.jsx            # 상단바 (로고, 검색, 로그인)
-MovieCard.jsx         # 영화 리스트 카드
-MovieCardDetail.jsx   # 영화 상세 페이지
-Login.jsx             # 로그인/회원가입 공용 컴포넌트
-/hooks
-useDebounce.js        # 검색 딜레이용 커스텀 훅
-useInfiniteScroll.js  # 무한스크롤 (추가 가능)
-/pages (or /app)
-index.jsx             # 메인페이지
-login.jsx             # 로그인/회원가입
-movie/[id].jsx        # 영화 상세
-/utils
-api.js                # TMDB/Supabase 관련 함수
-/styles
-tailwind.css
+src/
+├── components/
+│   ├── Navbar.jsx
+│   ├── MovieCard.jsx
+│   ├── MovieCardDetail.jsx
+│   └── Login.jsx
+├── hooks/
+│   ├── useDebounce.js
+│   └── useInfiniteScroll.js
+├── pages/      (or app/)
+│   ├── index.jsx
+│   ├── login.jsx
+│   └── movie/
+│       └── [id].jsx
+├── utils/
+│   └── api.js
+├── styles/
+│   └── tailwind.css
+
+
+![프로젝트 폴더 구조](/moviesitefolder.png)
 
 ---
 
