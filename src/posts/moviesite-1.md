@@ -1,5 +1,5 @@
 ---
-title: 영화 사이트 프로젝트 1편 - 기획과 설계
+title: 1편 - 기획과 설계
 category: moviesite
 tag: project
 ---

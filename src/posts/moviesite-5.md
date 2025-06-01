@@ -1,5 +1,5 @@
 ---
-title: 영화 사이트 프로젝트 5편 – 상세페이지 구현 및 기능 확장/마무리
+title: 5편 – 상세페이지 구현 및 기능 확장/마무리
 category: moviesite
 tag: project
 ---

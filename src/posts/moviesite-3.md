@@ -1,5 +1,5 @@
 ---
-title: 영화 사이트 프로젝트 3편 – TMDB API 연동과 무비카드 리스트 구현
+title: 3편 – TMDB API 연동과 무비카드 리스트 구현
 category: moviesite
 tag: project
 ---

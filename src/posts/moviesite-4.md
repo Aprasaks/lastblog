@@ -1,5 +1,5 @@
 ---
-title: 영화 사이트 프로젝트 4편 – 소셜로그인 적용 및 인증 고도화
+title: 4편 – 소셜로그인 적용 및 인증 고도화
 category: moviesite
 tag: project
 ---
