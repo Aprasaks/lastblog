@@ -4,7 +4,7 @@ category: moviesite
 tag: project
 ---
 
-# 3편 – TMDB API 연동 & 영화 리스트/무한스크롤 준비
+# 🎬 3편 – TMDB API 연동 & 영화 리스트/무한스크롤 준비
 
 이번 단계에서는  
 실제 영화 데이터를 받아오는 API 연동과  
