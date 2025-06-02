@@ -37,9 +37,14 @@ body {
 
 .prose code {
   background-color: rgba(100, 116, 139, 0.15);  /* slate-600/20 같은 느낌 */
-  color: #38bdf8;  /* sky-400 같은 느낌, 원하는 색 */
+  color: #38bdf8;
   padding: 0.15em 0.35em;
   border-radius: 0.25em;
   font-size: 0.96em;
   font-family: 'Fira Mono', 'Menlo', 'Consolas', monospace;
+}
+
+.prose pre code {
+  color: inherit;
+  /* background: none; */
 }
