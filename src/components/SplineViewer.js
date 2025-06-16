@@ -7,10 +7,15 @@ export default function SplineViewer({ url, className = "" }) {
     <spline-viewer
       url={url}
       className={className}
-      data-aos="fade-zoom-in"
-      data-aos-easing="ease-in-back"
-      data-aos-delay="300"
-      data-aos-offset="0"
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        zIndex: -1,
+      }}
+      
     />
   );
 }

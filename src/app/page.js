@@ -3,6 +3,7 @@
 
 import Script from "next/script"
 import dynamic from "next/dynamic"
+import { useEffect } from "react"
 
 const SplineViewer = dynamic(
   () => import("../components/SplineViewer"),
@@ -10,58 +11,74 @@ const SplineViewer = dynamic(
 )
 
 export default function HomePage() {
-  const START_DATE = new Date("2025-02-27");
-  const today = new Date();
-  const diff = today - START_DATE;
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24)) + 1;
+  
+
+  // 메인 페이지에서만 body 스크롤 숨기기
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    
+    // 컴포넌트 언마운트될 때 다시 원복
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
 
   return (
-    <div className =" pointer-events-none "> 
+    <div className="h-screen overflow-hidden"> 
+      <SplineViewer url="https://prod.spline.design/1R-Re4QqI1zUkFxz/scene.splinecode"/>
     
 
-      <main className="flex flex-col justify-center min-h-[90vh]">
-        <div
-          className="max-w-[40rem] ml-10 space-y-6 z-50"
-          data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-back"
-          data-aos-delay="300"
-          data-aos-offset="0"
-          data-aos-duration="1500"
-        >
-          <div className="relative w-72 h-10 rounded-full overflow-hidden
-                          bg-[length:200%_auto]
-                          bg-[linear-gradient(to_right,#656565,#7f42a7,#6600c5,#5300a0,#757575,#656565)]
-                          animate-gradient
-                          shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-            <div className="absolute inset-1 bg-black rounded-full flex items-center justify-center transition-colors hover:text-[#5300a0]">
-              Frontend Developer
-            </div>
-          </div>
-
-          <h2
-            className="text-6xl font-semibold leading-tight text-white"
-            data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="300"
-            data-aos-duration="2500"
-          >
-            24Hours Studying
-            
-          </h2>
-          <p
-            className="text-lg text-gray-400 max-w-[35rem]"
-            data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="300"
-            data-aos-duration="2500"
-          >
-            오늘로 {days}일째 공부중입니다.
-          </p>
+          <main className="flex flex-col justify-center min-h-[90vh]">
+      <div
+        className="w-full px-10 z-50" // max-w 제거하고 w-full로 변경
+        data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="300"
+        data-aos-offset="0"
+        data-aos-duration="1000"
+      >
+        {/* 3개 버튼을 화면 전체에 균등 분배 */}
+        <div className="flex justify-between items-center"> {/* justify-between으로 변경 */}
           
+          {/* Frontend Developer - 보라/파랑 계열 */}
+        <div className="relative w-72 h-10 rounded-full overflow-hidden
+                        bg-[length:200%_auto]
+                        bg-[linear-gradient(to_right,#4f46e5,#7c3aed,#a855f7,#c084fc,#4f46e5)]
+                        animate-gradient
+                        shadow-[0_0_15px_rgba(139,92,246,0.4)]">
+          <div className="absolute inset-1 bg-black rounded-full flex items-center justify-center transition-colors hover:text-[#a855f7]">
+            Frontend Developer
+          </div>
         </div>
-      </main>
 
-      <SplineViewer url="https://prod.spline.design/LhHn-IAeBtDJN3SY/scene.splinecode" className="absolute top-0 right-[-20%]" />
+        {/* Backend Developer - 초록/청록 계열 */}
+        <div className="relative w-72 h-10 rounded-full overflow-hidden
+                        bg-[length:200%_auto]
+                        bg-[linear-gradient(to_right,#059669,#10b981,#34d399,#6ee7b7,#059669)]
+                        animate-gradient
+                        shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+          <div className="absolute inset-1 bg-black rounded-full flex items-center justify-center transition-colors hover:text-[#10b981]">
+            Backend Developer
+          </div>
+        </div>
+
+        {/* FullStack Developer - 주황/빨강 계열 */}
+        <div className="relative w-72 h-10 rounded-full overflow-hidden
+                        bg-[length:200%_auto]
+                        bg-[linear-gradient(to_right,#dc2626,#f97316,#fbbf24,#f59e0b,#dc2626)]
+                        animate-gradient
+                        shadow-[0_0_15px_rgba(249,115,22,0.4)]">
+          <div className="absolute inset-1 bg-black rounded-full flex items-center justify-center transition-colors hover:text-[#f97316]">
+            FullStack Developer
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </main>
+
+          
+
     </div>
   )
 }
