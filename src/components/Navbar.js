@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Navbar() {
   // 메뉴 라벨과 경로 매핑
   const NAVS = [
-    { label: "DOCS", href: "/docs" },
+    { label: "DOCS", href: "/post" },
     { label: "LEARN", href: "/learn" },
     { label: "PROJECT", href: "/project" },
     { label: "ABOUT", href: "/about" },
