@@ -166,12 +166,7 @@ export default function PostsIndexClient({ categories: initialCategories }) {
               className="flex flex-col items-center gap-4"
             >
               <br/>
-              <button
-                onClick={() => setIsVoiceModalOpen(true)}
-                className="px-6 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-lg font-medium transition-colors"
-              >
-                🤖 JARVIS 호출
-              </button>
+              
               
               
             </motion.div>
