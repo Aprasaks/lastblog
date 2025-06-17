@@ -9,6 +9,22 @@ export default function VoiceJarvisModal({ isOpen, onClose, onResult }) {
   const [isListening, setIsListening] = useState(false)
   const [transcript, setTranscript] = useState('')
   const [isProcessing, setIsProcessing] = useState(false)
+
+  // TTS 음성 합성 함수
+  const speak = (text) => {
+    if ('speechSynthesis' in window) {
+      // 이전 음성 중단
+      window.speechSynthesis.cancel()
+      
+      const utterance = new SpeechSynthesisUtterance(text)
+      utterance.lang = 'ko-KR'
+      utterance.rate = 0.9  // 말하는 속도
+      utterance.pitch = 1.1 // 음높이 (조금 높게)
+      utterance.volume = 0.8 // 볼륨
+      
+      window.speechSynthesis.speak(utterance)
+    }
+  }
   const recognitionRef = useRef(null)
 
   useEffect(() => {
@@ -17,11 +33,12 @@ export default function VoiceJarvisModal({ isOpen, onClose, onResult }) {
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
       if (SpeechRecognition) {
         recognitionRef.current = new SpeechRecognition()
-        recognitionRef.current.continuous = false
+        recognitionRef.current.continuous = false // false로 변경
         recognitionRef.current.lang = 'ko-KR'
         recognitionRef.current.interimResults = true
 
         recognitionRef.current.onstart = () => {
+          console.log('🎤 모달 음성 인식 시작')
           setIsListening(true)
         }
 
@@ -31,6 +48,7 @@ export default function VoiceJarvisModal({ isOpen, onClose, onResult }) {
           setTranscript(transcriptText)
 
           if (event.results[current].isFinal) {
+            console.log('✅ 최종 인식:', transcriptText)
             setIsListening(false)
             setIsProcessing(true)
             // AI 처리
@@ -39,12 +57,18 @@ export default function VoiceJarvisModal({ isOpen, onClose, onResult }) {
         }
 
         recognitionRef.current.onerror = (event) => {
-          console.error('Speech recognition error:', event.error)
+          console.error('❌ 모달 음성 인식 에러:', event.error)
           setIsListening(false)
           setIsProcessing(false)
+          
+          // aborted 에러는 무시
+          if (event.error === 'aborted') {
+            console.log('⚠️ aborted 에러 무시됨')
+          }
         }
 
         recognitionRef.current.onend = () => {
+          console.log('🛑 모달 음성 인식 종료')
           setIsListening(false)
         }
       }
@@ -61,7 +85,16 @@ export default function VoiceJarvisModal({ isOpen, onClose, onResult }) {
     if (isOpen) {
       setTranscript('')
       setIsProcessing(false)
-      startListening()
+      
+      // 모달이 열리면 인사말 음성으로 말하기
+      setTimeout(() => {
+        speak('안녕하세요 주인님! 무엇을 도와드릴까요?')
+      }, 500) // 0.5초 후에 말하기
+      
+      // 1초 후에 음성 인식 시작
+      setTimeout(() => {
+        startListening()
+      }, 2500)
     }
   }, [isOpen])
 
@@ -94,6 +127,9 @@ export default function VoiceJarvisModal({ isOpen, onClose, onResult }) {
       })
 
       const data = await response.json()
+      
+      // AI 응답을 음성으로 말하기
+      speak(data.response)
       
       // 결과를 부모 컴포넌트로 전달
       onResult({
