@@ -9,7 +9,6 @@ export default function Navbar() {
     { label: "PROJECT", href: "/project" },
     { label: "ABOUT", href: "/about" },
     { label: "JARVIS", href: "/jarvis" },
-    { label: "NEW", href: "/newdocs" },
   ];
 
   // 공부 일수 계산
