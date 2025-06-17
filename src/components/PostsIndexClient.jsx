@@ -141,7 +141,7 @@ export default function PostsIndexClient({ categories: initialCategories }) {
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder='검색어를 입력하세요... 또는 "Hey JARVIS" 말해보세요'
+                placeholder='검색어를 입력하세요'
                 className="w-full py-4 px-6 pr-16 text-lg rounded-2xl bg-gray-900/50 border border-gray-700 placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
               />
               <button className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors">
@@ -155,7 +155,7 @@ export default function PostsIndexClient({ categories: initialCategories }) {
               transition={{ delay: 0.4 }}
               className="text-gray-400 mt-4 text-center"
             >
-              음성으로 "자비스"를 부르면 AI 어시스턴트가 도와드립니다
+              
             </motion.p>
 
             {/* 임시 테스트 버튼 */}
@@ -165,16 +165,15 @@ export default function PostsIndexClient({ categories: initialCategories }) {
               transition={{ delay: 0.6 }}
               className="flex flex-col items-center gap-4"
             >
+              <br/>
               <button
                 onClick={() => setIsVoiceModalOpen(true)}
                 className="px-6 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-lg font-medium transition-colors"
               >
-                🤖 JARVIS 호출 (버튼)
+                🤖 JARVIS 호출
               </button>
               
-              <div className="text-gray-400 text-sm">
-                음성 인식 상태: {isVoiceModalOpen ? '모달 열림' : '대기 중'}
-              </div>
+              
             </motion.div>
           </div>
 
@@ -230,12 +229,6 @@ export default function PostsIndexClient({ categories: initialCategories }) {
             {/* 기본 상태 - 검색 안내 */}
             {!searchTerm && (
               <div className="text-center py-12">
-                <div className="text-gray-400 text-lg mb-4">
-                  검색어를 입력하거나 "Hey JARVIS"를 불러보세요
-                </div>
-                <div className="text-gray-500 text-sm">
-                  AI 어시스턴트가 문서를 찾아드립니다
-                </div>
               </div>
             )}
           </motion.div>
